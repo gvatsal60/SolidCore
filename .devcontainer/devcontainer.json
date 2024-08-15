@@ -13,12 +13,15 @@
         "gurumukhi.selected-lines-count",
         "bradzacher.vscode-copy-filename",
         "PKief.material-icon-theme",
-        "SonarSource.sonarlint-vscode"
+        "SonarSource.sonarlint-vscode",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.cpptools"
       ],
       "settings": {
         "C_Cpp.autocompleteAddParentheses": true,
         "C_Cpp.codeAnalysis.clangTidy.enabled": true,
         "C_Cpp.intelliSenseEngine": "default",
+        "sonarlint.pathToCompileCommands": "${localWorkspaceFolder}/compile_commands.json",
         "editor.bracketPairColorization.enabled": true,
         "editor.comments.insertSpace": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -52,16 +55,18 @@
       }
     }
   },
-  "features": {
-    "ghcr.io/gvatsal60/dev-container-features/sonarlint": {}
+  "build": {
+    "dockerfile": "${localWorkspaceFolder}/.devcontainer/Dockerfile",
   },
-  "image": "mcr.microsoft.com/devcontainers/base:jammy",
   "mounts": [
     "source=${localWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
   ],
   "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
   "runArgs": [
     "--rm",
-    "--name=vsc-${localEnv:USER}-${containerWorkspaceFolderBasename}-${devcontainerId}"
+    "--name=vsc-${localEnv:USER}-${containerWorkspaceFolderBasename}-${devcontainerId}",
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined"
   ]
 }
