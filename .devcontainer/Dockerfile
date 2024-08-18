@@ -27,20 +27,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 # ##########################################################################
 # Install Dependencies
 # ##########################################################################
-# Update package lists and install essential tools:
-RUN apt update \
-  && apt install -y \
-  bear \
-  curl \
-  sudo \
-  gnupg \
-  ca-certificates \
-  && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
-
 # Add NodeSource APT repository for Node.js Installation
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
   && apt update \
-  && apt install -y nodejs \
+  && apt install -y \
+  nodejs \
+  bear \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 # ##########################################################################

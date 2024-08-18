@@ -7,12 +7,14 @@ MKDIR := mkdir -p
 RMDIR := rm -rf
 MV_DIR := mv -f
 
-INC_DIR := inc
-SRC_DIR := src
-TEST_DIR := test/src
-BUILD_DIR := build
+TOP_DIR := $(shell basename `git rev-parse --show-toplevel` | tr '[:upper:]' '[:lower:]')
+INC_DIR := $(TOP_DIR)/inc
+SRC_DIR := $(TOP_DIR)/src
+TEST_DIR := $(TOP_DIR)/test/src
+BUILD_DIR := $(TOP_DIR)/build
 DEP_DIR := $(BUILD_DIR)/dep
-BIN_DIR := bin
+BIN_DIR := $(TOP_DIR)/bin
+
 TARGET := debugBin
 TEST_TARGET := testBin
 

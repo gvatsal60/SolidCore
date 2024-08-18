@@ -106,6 +106,12 @@ coverage/
 # Next.js
 .next/
 
+# C/C++ Clang
+.cache/
+
+# Bear
+**/compile_commands.json
+
 # Binaries, node_modules, and other folders #
 ############################################
 bin/
