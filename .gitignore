@@ -119,3 +119,5 @@ lib/
 dist/
 bower_components/
 *.min.js
+package-lock.json
+package.json

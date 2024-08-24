@@ -1,6 +1,6 @@
 /***************************************************************************************
  * File: open_closed.hpp
- * Author: USER // TODO
+ * Author: Vatsal Gupta(gvatsal60)
  * Date: 18-Aug-2024
  * Description: Brief description of the file's purpose.
  **************************************************************************************/
@@ -9,7 +9,7 @@
  * License
  **************************************************************************************/
 /*
- * This file is licensed under the MIT License. // TODO
+ * This file is licensed under the Apache 2.0 License.
  * License information should be updated as necessary.
  */
 
@@ -19,7 +19,7 @@
 #ifndef _OPEN_CLOSED_H_
 #define _OPEN_CLOSED_H_
 
-#include <cstdio> // TODO
+#include <cstdio>
 
 /***************************************************************************************
  * Constants

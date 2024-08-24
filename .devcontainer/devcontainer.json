@@ -1,5 +1,10 @@
 {
-  "capAdd": ["SYS_PTRACE"],
+  "build": {
+    "dockerfile": "${localWorkspaceFolder}/.devcontainer/Dockerfile"
+  },
+  "capAdd": [
+    "SYS_PTRACE"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -20,7 +25,8 @@
         "C_Cpp.autocompleteAddParentheses": true,
         "C_Cpp.codeAnalysis.clangTidy.enabled": true,
         "C_Cpp.intelliSenseEngine": "default",
-        "sonarlint.pathToCompileCommands": "${containerWorkspaceFolder}/compile_commands.json",
+        "clangd.checkUpdates": true,
+        "clangd.inactiveRegions.useBackgroundHighlight": true,
         "editor.bracketPairColorization.enabled": true,
         "editor.comments.insertSpace": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -48,14 +54,12 @@
           "**/bower_components": true,
           "**/node_modules": true
         },
+        "sonarlint.pathToCompileCommands": "${containerWorkspaceFolder}/compile_commands.json",
         "windows.title": "${folderPath}",
         "workbench.iconTheme": "material-icon-theme",
         "workbench.startupEditor": "none"
       }
     }
-  },
-  "build": {
-    "dockerfile": "${localWorkspaceFolder}/.devcontainer/Dockerfile"
   },
   "mounts": [
     "source=${localWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"

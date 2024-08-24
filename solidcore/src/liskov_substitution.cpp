@@ -1,6 +1,6 @@
 /***************************************************************************************
  * File: liskov_substitution.cpp
- * Author: USER // TODO
+ * Author: Vatsal Gupta(gvatsal60)
  * Date: 18-Aug-2024
  * Description: Brief description of the file's purpose.
  **************************************************************************************/
