@@ -8,17 +8,6 @@
 ![GitHub forks](https://img.shields.io/github/forks/gvatsal60/SolidCore)
 ![GitHub stars](https://img.shields.io/github/stars/gvatsal60/SolidCore)
 
-## Installation
-
-To install Project Template, follow these steps:
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/gvatsal60/SolidCore.git
-   cd SolidCore
-   ```
-
 ## Introduction
 
 The SOLID principles are a set of design principles that make object-oriented design more understandable, flexible, and maintainable.

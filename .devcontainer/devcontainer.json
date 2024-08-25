@@ -48,6 +48,7 @@
         "files.exclude": {
           "**/.vscode": true
         },
+        "files.trimTrailingWhitespace": true,
         "search.exclude": {
           "**/*.code-search": true,
           "**/*.git": true,
