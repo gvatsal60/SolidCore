@@ -24,10 +24,11 @@
  * @return The total area of all the shapes in the vector.
  */
 double TotalArea(const std::vector<Shape*>& shapes) {
-  double total = 0;
+  double total{};
   for (const auto& shape : shapes) {
     total += shape->Area();
   }
+  
   return total;
 }
 
