@@ -2,7 +2,7 @@
 # File: Dockerfile
 # Author: USER
 # Date: 16-Aug-2024
-# Description: Dockerfile for building a C++ development environment 
+# Description: Dockerfile for building a C++ development environment
 #              with Google Test (gtest) v1.15.2
 # ##########################################################################
 
