@@ -24,6 +24,7 @@
       "settings": {
         "C_Cpp.autocompleteAddParentheses": true,
         "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+        "C_Cpp.doxygen.generatedStyle": "/**",
         "C_Cpp.intelliSenseEngine": "default",
         "clangd.checkUpdates": true,
         "clangd.inactiveRegions.useBackgroundHighlight": true,
@@ -55,6 +56,16 @@
           "**/node_modules": true
         },
         "sonarlint.pathToCompileCommands": "${containerWorkspaceFolder}/compile_commands.json",
+        "todo-tree.general.tags": [
+          "BUG",
+          "HACK",
+          "FIXME",
+          "TODO",
+          "XXX",
+          "[ ]",
+          "[x]",
+          "REMOVE"
+        ],
         "windows.title": "${folderPath}",
         "workbench.iconTheme": "material-icon-theme",
         "workbench.startupEditor": "none"

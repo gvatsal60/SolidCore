@@ -2,7 +2,9 @@
  * File: liskov_substitution.hpp
  * Author: Vatsal Gupta(gvatsal60)
  * Date: 18-Aug-2024
- * Description: Brief description of the file's purpose.
+ * Description: Liskov Substitution Principle (LSP)
+ * Subtypes must be substitutable for their base types without altering the
+ * correctness of the program.
  **************************************************************************************/
 
 /***************************************************************************************
@@ -16,10 +18,10 @@
 /***************************************************************************************
  * Includes
  **************************************************************************************/
-#ifndef _LISKOV_SUBSTITUTION_H_
-#define _LISKOV_SUBSTITUTION_H_
+#pragma once
 
-#include <cstdio>
+#include <iostream>
+#include <string>
 
 /***************************************************************************************
  * Constants
@@ -33,4 +35,29 @@
  * Class Declarations
  **************************************************************************************/
 
-#endif
+/**
+ * @brief Abstract base class representing a generic bird.
+ */
+class Bird {
+ public:
+  virtual ~Bird() = default;
+  virtual void Fly() const { std::cout << "Bird is flying" << std::endl; }
+};
+
+/**
+ * @brief Derived class representing a sparrow, a type of bird.
+ */
+class Sparrow : public Bird {
+ public:
+  ~Sparrow() override = default;
+  void Fly() const override { std::cout << "Sparrow is flying" << std::endl; }
+};
+
+/**
+ * @brief Derived class representing an ostrich, a type of bird that cannot fly.
+ */
+class Ostrich : public Bird {
+ public:
+  ~Ostrich() override = default;
+  void Fly() const override { std::cerr << "Ostriches can't fly" << std::endl; }
+};
