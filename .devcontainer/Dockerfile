@@ -2,13 +2,14 @@
 # File: Dockerfile
 # Author: USER
 # Date: 16-Aug-2024
-# Description: Brief description of the Dockerfile purpose.
+# Description: Dockerfile for building a C++ development environment
+#              with Google Test (gtest) v1.15.2
 # ##########################################################################
 
 # ##########################################################################
 # License
 # ##########################################################################
-# This Dockerfile is licensed under the MIT License.
+# This Dockerfile is licensed under the Apache 2.0 License.
 # License information should be updated as necessary.
 # ##########################################################################
 
@@ -50,11 +51,15 @@ RUN set -x \
   && cd build && cmake .. \
   && make -j$(nproc) && make install DESTDIR=/opt/gtest
 
+# Create a final stage to assemble the final image
+FROM base
+
+# Optional: Clean up unnecessary files
+RUN apt purge --auto-remove -y && apt clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+
 # ##########################################################################
 # Copy Files
 # ##########################################################################
-# Create a final stage to assemble the final image
-FROM base
 # Copy gtest binaries from the gtest stage
 COPY --from=gtest /opt/gtest /
 
