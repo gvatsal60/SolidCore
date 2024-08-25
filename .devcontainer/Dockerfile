@@ -35,9 +35,28 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
   bear \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
+# Install gtest-v1.15.2
+FROM base AS gtest
+ARG GTEST_VER=v1.15.2
+RUN set -x \
+  # Building gtest from source
+  && SRC=/usr/local/src/google-test-${GTEST_VER} \
+  && mkdir -p ${SRC} && cd ${SRC} \
+  # Download and extract gtest source code
+  && curl -Lfs https://github.com/google/googletest/archive/refs/tags/${GTEST_VER}.tar.gz \
+  | tar xz -C ${SRC} --strip-component=1 \
+  # Create build directory and compile gtest
+  && mkdir -p build \
+  && cd build && cmake .. \
+  && make -j$(nproc) && make install DESTDIR=/opt/gtest
+
 # ##########################################################################
 # Copy Files
 # ##########################################################################
+# Create a final stage to assemble the final image
+FROM base
+# Copy gtest binaries from the gtest stage
+COPY --from=gtest /opt/gtest /
 
 # ##########################################################################
 # Set Working Directory

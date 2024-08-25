@@ -1,3 +1,5 @@
+#!/usr/bin/make
+
 # Compiler and flags
 CXX := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra -g

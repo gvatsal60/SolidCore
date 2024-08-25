@@ -1,4 +1,4 @@
-include ./Makefiles/debug.mk
+#!/usr/bin/make
 
 .PHONY: all clean test
 
