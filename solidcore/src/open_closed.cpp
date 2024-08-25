@@ -28,7 +28,7 @@ double TotalArea(const std::vector<Shape*>& shapes) {
   for (const auto& shape : shapes) {
     total += shape->Area();
   }
-  
+
   return total;
 }
 

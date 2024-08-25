@@ -44,11 +44,11 @@
           "*.code-snippets": "jsonc"
         },
         "files.autoSave": "afterDelay",
-        "files.trimTrailingWhitespace": true,
         "files.eol": "auto",
         "files.exclude": {
           "**/.vscode": true
         },
+        "files.trimTrailingWhitespace": true,
         "search.exclude": {
           "**/*.code-search": true,
           "**/*.git": true,
