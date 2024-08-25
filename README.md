@@ -1,12 +1,12 @@
 # SolidCore
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://img.shields.io/github/license/gvatsal60/Solidcore)
-[![build status](https://github.com/gvatsal60/Solidcore/actions/workflows/readme-checker.yaml/badge.svg)](https://github.com/gvatsal60/Solidcore/actions/workflows/readme-checker.yaml)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gvatsal60/Solidcore/master.svg)](https://results.pre-commit.ci/latest/github/gvatsal60/Solidcore/HEAD)
-![GitHub pull-requests](https://img.shields.io/github/issues-pr/gvatsal60/Solidcore)
-![GitHub Issues](https://img.shields.io/github/issues/gvatsal60/Solidcore)
-![GitHub forks](https://img.shields.io/github/forks/gvatsal60/Solidcore)
-![GitHub stars](https://img.shields.io/github/stars/gvatsal60/Solidcore)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://img.shields.io/github/license/gvatsal60/SolidCore)
+[![build status](https://github.com/gvatsal60/SolidCore/actions/workflows/readme-checker.yaml/badge.svg)](https://github.com/gvatsal60/SolidCore/actions/workflows/readme-checker.yaml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gvatsal60/SolidCore/master.svg)](https://results.pre-commit.ci/latest/github/gvatsal60/SolidCore/HEAD)
+![GitHub pull-requests](https://img.shields.io/github/issues-pr/gvatsal60/SolidCore)
+![GitHub Issues](https://img.shields.io/github/issues/gvatsal60/SolidCore)
+![GitHub forks](https://img.shields.io/github/forks/gvatsal60/SolidCore)
+![GitHub stars](https://img.shields.io/github/stars/gvatsal60/SolidCore)
 
 ## Installation
 
@@ -15,8 +15,8 @@ To install Project Template, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/gvatsal60/Solidcore.git
-   cd Solidcore
+   git clone https://github.com/gvatsal60/SolidCore.git
+   cd SolidCore
    ```
 
 ## Introduction
@@ -78,10 +78,10 @@ After all, who needs simplicity when you can have complexity? 😏
 ## Contributing
 
 Contributions are welcome! Please read our
-[Contribution Guidelines](https://github.com/gvatsal60/Solidcore/blob/HEAD/CONTRIBUTING.md)
+[Contribution Guidelines](https://github.com/gvatsal60/SolidCore/blob/HEAD/CONTRIBUTING.md)
 before submitting pull requests.
 
 ## License
 
 This project is licensed under the Apache License 2.0 License - see the
-[LICENSE](https://github.com/gvatsal60/Solidcore/blob/HEAD/LICENSE) file for details.
+[LICENSE](https://github.com/gvatsal60/SolidCore/blob/HEAD/LICENSE) file for details.
