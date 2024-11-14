@@ -22,16 +22,16 @@
         "llvm-vs-code-extensions.vscode-clangd"
       ],
       "settings": {
+        "C_Cpp.autocompleteAddParentheses": true,
+        "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+        "C_Cpp.doxygen.generatedStyle": "/**",
+        "C_Cpp.intelliSenseEngine": "default",
         "[cpp]": {
           "C_Cpp.autocompleteAddParentheses": true,
           "C_Cpp.codeAnalysis.clangTidy.enabled": true,
           "C_Cpp.intelliSenseEngine": "default",
           "editor.defaultFormatter": "ms-vscode.cpptools"
         },
-        "C_Cpp.autocompleteAddParentheses": true,
-        "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-        "C_Cpp.doxygen.generatedStyle": "/**",
-        "C_Cpp.intelliSenseEngine": "default",
         "clangd.checkUpdates": true,
         "clangd.inactiveRegions.useBackgroundHighlight": true,
         "editor.bracketPairColorization.enabled": true,
