@@ -25,7 +25,7 @@
  * summed.
  * @return The total area of all the shapes in the vector.
  */
-double TotalArea(std::span<Shape* const>& shapes) {
+double TotalArea(const std::span<Shape* const>& shapes) {
   double total{};
   for (const auto& shape : shapes) {
     total += shape->Area();
