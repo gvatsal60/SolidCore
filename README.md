@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://img.shields.io/github/license/gvatsal60/SolidCore)
 [![CodeQL](https://github.com/gvatsal60/SolidCore/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/gvatsal60/SolidCore/actions/workflows/github-code-scanning/codeql)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gvatsal60/SolidCore/master.svg)](https://results.pre-commit.ci/latest/github/gvatsal60/SolidCore/HEAD)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gvatsal60_SolidCore&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gvatsal60_SolidCore)
 ![GitHub pull-requests](https://img.shields.io/github/issues-pr/gvatsal60/SolidCore)
 ![GitHub Issues](https://img.shields.io/github/issues/gvatsal60/SolidCore)
 ![GitHub forks](https://img.shields.io/github/forks/gvatsal60/SolidCore)

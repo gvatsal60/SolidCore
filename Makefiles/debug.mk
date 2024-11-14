@@ -2,7 +2,7 @@
 
 # Compiler and flags
 CXX := g++
-CXXFLAGS := -std=c++17 -Wall -Wextra -g
+CXXFLAGS := -std=c++2a -Wall -Wextra -g
 LDFLAGS := -lgtest -lgtest_main -pthread
 
 MKDIR := mkdir -p

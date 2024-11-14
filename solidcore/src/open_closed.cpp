@@ -11,6 +11,8 @@
 
 #include "open_closed.hpp"
 
+#include <span>
+
 /***************************************************************************************
  * Global Functions Definitions
  **************************************************************************************/
@@ -23,7 +25,7 @@
  * summed.
  * @return The total area of all the shapes in the vector.
  */
-double TotalArea(const std::vector<Shape*>& shapes) {
+double TotalArea(std::span<Shape* const>& shapes) {
   double total{};
   for (const auto& shape : shapes) {
     total += shape->Area();

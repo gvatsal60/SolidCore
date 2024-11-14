@@ -9,7 +9,7 @@
 /***************************************************************************************
  * Includes
  **************************************************************************************/
-#include <cstdio>
+#include <iostream>
 
 #include "dependency_inversion.hpp"
 #include "interface_segregated.hpp"
@@ -33,8 +33,7 @@
  * @return Returns 0 to indicate successful execution.
  */
 int main([[maybe_unused]] int argc, [[maybe_unused]] char const *argv[]) {
-  printf("%s:%d %s Hello World!!!\n", "main.cpp", __LINE__,
-         __FUNCTION__);  // REMOVE
+  std::cout << "Hello World!!!\n";
 
   return 0;
 }
