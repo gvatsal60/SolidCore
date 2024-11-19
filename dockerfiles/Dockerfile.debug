@@ -25,43 +25,56 @@ LABEL maintainer="gvatsal60"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG USERNAME=vscode
+
 # ##########################################################################
 # Install Dependencies
 # ##########################################################################
+ARG GTEST_DEST=/opt/gtest
+
 # Add NodeSource APT repository for Node.js Installation
-RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
-  && apt update \
-  && apt install -y \
-  nodejs \
+RUN curl --proto "=https" --tlsv1.2 -sSf -L https://deb.nodesource.com/setup_lts.x | bash - \
+  && apt-get update \
+  && apt-get -y install --no-install-recommends \
   bear \
+  nodejs \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-# Install gtest-v1.15.2
+# Install gtest from source
 FROM base AS gtest
-ARG GTEST_VER=v1.15.2
-RUN set -x \
-  # Building gtest from source
-  && SRC=/usr/local/src/google-test-${GTEST_VER} \
-  && mkdir -p ${SRC} && cd ${SRC} \
-  # Download and extract gtest source code
-  && curl -Lfs https://github.com/google/googletest/archive/refs/tags/${GTEST_VER}.tar.gz \
-  | tar xz -C ${SRC} --strip-component=1 \
-  # Create build directory and compile gtest
-  && mkdir -p build \
-  && cd build && cmake .. \
-  && make -j$(nproc) && make install DESTDIR=/opt/gtest
+ARG GTEST_VER=1.15.2
+ARG GTEST_TAR_VER=v${GTEST_VER}.tar.gz
+ARG GTEST_BUILD_DIR=googletest-${GTEST_VER}/build
+ARG GTEST_SRC=/usr/local/src
 
-# Create a final stage to assemble the final image
-FROM base
+# Download and extract gtest source code using ADD
+ADD https://github.com/google/googletest/archive/${GTEST_TAR_VER} ${GTEST_SRC}
+
+# Extract gtest source code, build directory, compile, and install gtest
+RUN set -x \
+  && tar -xzvf ${GTEST_SRC}/${GTEST_TAR_VER} -C ${GTEST_SRC} \
+  && mkdir -p ${GTEST_SRC}/${GTEST_BUILD_DIR} \
+  && cd ${GTEST_SRC}/${GTEST_BUILD_DIR} \
+  && cmake .. \
+  && make -j$(nproc) \
+  && make install DESTDIR=${GTEST_DEST} \
+  && rm -rf ${GTEST_SRC}/${GTEST_VER}
+
+# Build Final Image
+FROM base AS build
+
+# Copy gtest binaries from the gtest stage
+COPY --from=gtest ${GTEST_DEST} /
 
 # Optional: Clean up unnecessary files
 RUN apt purge --auto-remove -y && apt clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
+# Switch to non-root user
+USER ${USERNAME}
+
 # ##########################################################################
 # Copy Files
 # ##########################################################################
-# Copy gtest binaries from the gtest stage
-COPY --from=gtest /opt/gtest /
 
 # ##########################################################################
 # Set Working Directory
