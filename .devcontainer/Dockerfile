@@ -16,7 +16,7 @@
 # ##########################################################################
 # Base Image
 # ##########################################################################
-FROM mcr.microsoft.com/vscode/devcontainers/cpp:noble AS base
+FROM mcr.microsoft.com/devcontainers/cpp:noble AS base
 
 # ##########################################################################
 # Maintainer
