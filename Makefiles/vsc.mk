@@ -1,23 +1,22 @@
-#!/usr/bin/make
+include cfg/.env
+include Makefiles/rules.mk
 
-.PHONY: all clean test
+# Targets
+.PHONY: all test clean
 
-vsc-all:
-	@$(MAKE) vsc-clean vsc-build
+all: clean build
 
-# Run commands only inside the development container
-.PHONY: vsc-build build
-vsc-build:
-	@bear --output compile_commands.json --append -- $(MAKE) -j$(nproc) build
+build:
+	@$(BUILD_CMD)
 
-.PHONY: vsc-test test
-vsc-test:
-	@bear --output compile_commands.json --append -- $(MAKE) -j$(nproc) test
+test:
+	@$(TEST_CMD)
 
-.PHONY: vsc-run run
-vsc-run:
-	@$(MAKE) run
+run: build
+	@$(RUN_CMD)
 
-.PHONY: vsc-clean clean
-vsc-clean:
-	@$(MAKE) -j$(nproc) clean
+clean:
+	@$(CLEAN_CMD)
+
+sonar: clean build
+	@$(SONAR_CMD)
