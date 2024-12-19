@@ -12,7 +12,7 @@ build:
 test:
 	@$(TEST_CMD)
 
-run:
+run: build
 	@$(RUN_CMD)
 
 clean:

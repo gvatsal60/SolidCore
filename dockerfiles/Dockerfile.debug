@@ -1,9 +1,8 @@
 # ##########################################################################
 # File: Dockerfile
-# Author: USER
+# Author: gvatsal60 (Vatsal Gupta)
 # Date: 16-Aug-2024
-# Description: Dockerfile for building a C++ development environment
-#              with Google Test (gtest) v1.15.2
+# Description: Dockerfile for building a C++ development environment.
 # ##########################################################################
 
 # ##########################################################################
@@ -16,7 +15,7 @@
 # ##########################################################################
 # Base Image
 # ##########################################################################
-FROM mcr.microsoft.com/devcontainers/cpp:noble AS base
+FROM mcr.microsoft.com/devcontainers/cpp:latest AS base
 
 # ##########################################################################
 # Maintainer
@@ -30,7 +29,6 @@ ARG USERNAME=vscode
 # ##########################################################################
 # Install Dependencies
 # ##########################################################################
-ARG GTEST_DEST=/opt/gtest
 
 # Add NodeSource APT repository for Node.js Installation
 RUN curl --proto "=https" --tlsv1.2 -sSf -L https://deb.nodesource.com/setup_lts.x | bash - \
@@ -39,6 +37,8 @@ RUN curl --proto "=https" --tlsv1.2 -sSf -L https://deb.nodesource.com/setup_lts
   bear \
   nodejs \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+
+ARG GTEST_DEST=/opt/gtest
 
 # Install gtest from source
 FROM base AS gtest
@@ -67,7 +67,10 @@ FROM base AS build
 COPY --from=gtest ${GTEST_DEST} /
 
 # Optional: Clean up unnecessary files
-RUN apt purge --auto-remove -y && apt clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+RUN apt-get autoremove -y \
+  && apt-get purge -y --auto-remove \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 # Switch to non-root user
 USER ${USERNAME}
