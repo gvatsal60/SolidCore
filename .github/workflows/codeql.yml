@@ -77,7 +77,6 @@ jobs:
           mkdir -p build
           mv ${PROJECT_NAME}/build/dep/* build
           mv ${PROJECT_NAME}/build/* build
-
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
