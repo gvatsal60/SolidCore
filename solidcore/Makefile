@@ -10,9 +10,9 @@ MV_DIR := mv -f
 INC_DIR := inc
 SRC_DIR := src
 TEST_DIR := test/src
-BUILD_DIR := build
+BUILD_DIR := ../build
 DEP_DIR := $(BUILD_DIR)/dep
-BIN_DIR := bin
+BIN_DIR := ../bin
 TARGET := debugBin
 TEST_TARGET := testBin
 
