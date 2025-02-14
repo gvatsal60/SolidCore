@@ -1,6 +1,6 @@
 {
   "build": {
-    "dockerfile": "${localWorkspaceFolder}/.devcontainer/Dockerfile"
+    "dockerfile": "../dockerfiles/Dockerfile.debug"
   },
   "capAdd": [
     "SYS_PTRACE"
