@@ -8,25 +8,19 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "streetsidesoftware.code-spell-checker",
-        "esbenp.prettier-vscode",
-        "Gruntfuggly.todo-tree",
         "DavidAnson.vscode-markdownlint",
-        "usernamehw.errorlens",
-        "gurumukhi.selected-lines-count",
+        "Gruntfuggly.todo-tree",
+        "esbenp.prettier-vscode",
         "bradzacher.vscode-copy-filename",
-        "PKief.material-icon-theme",
         "SonarSource.sonarlint-vscode",
         "ms-azuretools.vscode-docker",
-        "ms-vscode.cpptools",
-        "llvm-vs-code-extensions.vscode-clangd"
+        "llvm-vs-code-extensions.vscode-clangd",
+        "streetsidesoftware.code-spell-checker",
+        "Tyriar.sort-lines",
+        "usernamehw.errorlens"
       ],
       "settings": {
         "[cpp]": {
-          "C_Cpp.autocompleteAddParentheses": true,
-          "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-          "C_Cpp.doxygen.generatedStyle": "/**",
-          "C_Cpp.intelliSenseEngine": "default",
           "editor.defaultFormatter": "ms-vscode.cpptools"
         },
         "clangd.checkUpdates": true,
@@ -41,7 +35,6 @@
         "editor.tabSize": 2,
         "editor.trimAutoWhitespace": true,
         "explorer.confirmDelete": false,
-        "extensions.autoUpdate": true,
         "extensions.ignoreRecommendations": true,
         "files.associations": {
           "*.code-snippets": "jsonc"
@@ -70,8 +63,6 @@
           "[x]",
           "REMOVE"
         ],
-        "windows.title": "${folderPath}",
-        "workbench.iconTheme": "material-icon-theme",
         "workbench.startupEditor": "none"
       }
     }
