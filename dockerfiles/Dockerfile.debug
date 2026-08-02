@@ -1,7 +1,6 @@
 # ##########################################################################
 # File: Dockerfile
 # Author: gvatsal60 (Vatsal Gupta)
-# Date: 16-Aug-2024
 # Description: Dockerfile for building a C++ development environment.
 # ##########################################################################
 
